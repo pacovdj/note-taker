@@ -53,3 +53,19 @@ app.delete("/api/notes/:id", function(req, res) {
     res.send('saved success!');  
 })
 })
+
+app.get("/notes", function(req, res) {
+    res.sendFile(path.join(__dirname, "./develop/public/index.html"));
+});
+
+app.get("/", function(req, res) {
+    res.sendFile(path.join(__dirname, "./develop/public/index.html"));
+});
+
+app.get("*", function(req, res) {
+    res.sendFile(path.join(__dirname, "./develop/public/index.html"));
+});
+
+app.listen(PORT, function() {
+    console.log("App listening on PORT" + PORT);
+});
